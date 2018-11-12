@@ -63,11 +63,19 @@ AWS Lambda NodeJS runtime requires a flat folder with all dependencies including
     FirstFunction:
         Type: AWS::Serverless::Function
         Properties:
-            CodeUri: hello_world/
+            CodeUri: hello_world/package.zip
             ...
 ```
 
-Firstly, we need a `S3 bucket` where we can upload our Lambda functions packaged as ZIP before we deploy anything - If you don't have a S3 bucket to store code artifacts then this is a good time to create one:
+First, we need to package our Lambda function and dependencies in ZIP file for deployment.
+
+```bash
+cd hello_world
+npm pack
+cd ..
+```
+
+Second, we need a `S3 bucket` where we can upload our Lambda functions packaged as ZIP before we deploy anything - If you don't have a S3 bucket to store code artifacts then this is a good time to create one:
 
 ```bash
 aws s3 mb s3://BUCKET_NAME
