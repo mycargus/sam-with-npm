@@ -1,4 +1,4 @@
-# sam-with-npm
+# Package Lambda Functions with NPM
 
 This repo is the companion to my article on [packaging Lambda functions with `npm pack`](https://hackernoon.com/package-lambda-functions-the-easy-way-with-npm-e38fc14613ba).
 
